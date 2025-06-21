@@ -60,7 +60,7 @@ async def generate_image(request: ImageRequest):
         "params": request.params  # Pass all model-specific parameters here
     }
 
-    job = queue.enqueue(router.run_model_task, **job_args, retry=Retry(max=4))
+    job = queue.enqueue(router.run_model_task, **job_args, retry=Retry(max=40))
     logging.info(f"Job queued for client {client_id}")
     return {"job_id": job.id, "client_id": client_id, "message": "Image generation job queued."}
 
