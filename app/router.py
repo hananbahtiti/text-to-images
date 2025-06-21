@@ -1,5 +1,5 @@
 import logging
-from tasks import task_model_a, task_model_b  # Add all models here
+from tasks import task_model_flux_pro, task_model_flux_pro_ultra, task_model_flux_dev,  task_model_ideogram_v2, task_model_flux_schnell # Add all models here
 
 def run_model_task(**kwargs):
     model_name = kwargs.get("model_name")
