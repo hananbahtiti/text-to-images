@@ -27,13 +27,17 @@ def generate_image(model_name, prompt, client_id, params):
     try:
         logging.info(f"Generating image for client {client_id} using model {model_name}...")
 
+        num_steps = params.get("num_inference_steps", 25)
+        if num_steps > 12:
+            num_steps = 12
+
         # Prepare argument dictionary for fal-client
         args = {
             "prompt": prompt,
             "num_images": params.get("num_images", 1),
             "enable_safety_checker": params.get("enable_safety_checker", True),
             "image_size": params.get("image_size", "landscape_4_3"),
-            "num_inference_steps": params.get("num_inference_steps", 25),  # reasonable default for schnell
+            "num_inference_steps": num_steps,  # reasonable default for schnell
             "sync_mode": params.get("sync_mode", False)
         }
 
