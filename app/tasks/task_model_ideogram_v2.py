@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 
 RESULT_TTL = 3600
 
-async def generate_image(model_name, prompt, client_id, params):
+def generate_image(model_name, prompt, client_id, params):
     """
     Generate image with parameters for fal-ai/ideogram/v2.
 
