@@ -1,7 +1,7 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from redis import Redis
 from rq import Queue, Retry
-from . import router  # Router to dispatch models
+import router  # Router to dispatch models
 import uuid
 import logging
 import asyncio
