@@ -14,5 +14,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Expose ports (optional, since worker doesn't need to expose anything)
 EXPOSE 8000
 
-# Start Worker (this is for the Worker container)
-CMD ["python", "app/worker.py"]
+# Start Worker
+CMD ["python", "worker.py"]
